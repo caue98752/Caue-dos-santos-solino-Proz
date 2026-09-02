@@ -1,0 +1,30 @@
+<?php
+
+declare(strict_types=1);
+
+class Produto
+{
+    public string $nome;
+    public int $estoque;
+
+    public function __construct(string $nome, int $estoque)
+    {
+        $this->nome = $nome;
+        $this->estoque = $estoque;
+    }
+
+    public function calcularValorTotalEstoque(float $preco): float
+    {
+        return $preco * $this->estoque;
+    }
+}
+
+
+$produto = new Produto("Teclado Mecânico", 15);
+
+$precoUnitario = 350.50;
+$valorTotal = $produto->calcularValorTotalEstoque($precoUnitario);
+
+echo "Produto: " . $produto->nome . "\n";
+echo "Quantidade em estoque: " . $produto->estoque . "\n";
+echo "Valor total em estoque: R$ " . number_format($valorTotal, 2, ',', '.') . "\n";
