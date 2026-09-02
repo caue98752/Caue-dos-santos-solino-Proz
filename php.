@@ -1,0 +1,17 @@
+<?php
+
+class Livro {
+    public $titulo;
+    public $autor;
+    public $paginas;
+
+    public function __construct($titulo, $autor, $paginas) {
+        $this->titulo = $titulo;
+        $this->autor = $autor;
+        $this->paginas = $paginas;
+    }
+}
+
+$meuLivro = new Livro("O Alquimista", "Paulo Coelho", 224);
+
+echo $meuLivro->titulo; 
